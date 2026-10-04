@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SND PULSE | Next-Gen AI Newsroom & Creator Studio Hub</title>
+  <meta name="description" content="SND Pulse - AI-driven Indian digital journalism, viral video feeds, and high-performance production studio rentals.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neo: {
+              black: '#09090b',
+              dark: '#111116',
+              card: '#181820',
+              border: '#272733',
+              lime: '#a3e635',
+              emerald: '#10b981',
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              orange: '#f97316'
+            }
+          },
+          fontFamily: {
+            heading: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #09090b; color: #f4f4f5; }
+    h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+    .font-mono-tech { font-family: 'Space Grotesk', monospace; }
+    .glow-lime { box-shadow: 0 0 25px rgba(163, 230, 53, 0.25); }
+    .glow-cyan { box-shadow: 0 0 25px rgba(6, 182, 212, 0.25); }
+    .custom-scroll::-webkit-scrollbar { width: 5px; height: 5px; }
+    .custom-scroll::-webkit-scrollbar-track { background: #111116; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #a3e635; border-radius: 4px; }
+    
+    /* Neon Tag */
+    .neon-pill {
+      background: rgba(163, 230, 53, 0.1);
+      border: 1px solid rgba(163, 230, 53, 0.3);
+      color: #a3e635;
+    }
+  </style>
+</head>
+<body class="bg-neo-black text-slate-100 min-h-screen selection:bg-neo-lime selection:text-black">
+
+  <!-- Concept Navigation Switcher Banner -->
+  <div class="bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950 border-b border-zinc-800 text-xs py-1.5 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="bg-neo-lime text-black text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider">Concept 02</span>
+        <span class="text-zinc-300 font-medium">SND Pulse — Neo-Digital Media, AI Fact-Check, Shorts & Interactive Studio Rental</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-zinc-500 hidden sm:inline">Preview Options:</span>
+        <a href="concept_1_prime_broadcast.html" class="text-zinc-400 hover:text-white transition">01. Prime Broadcast</a>
+        <a href="concept_2_neo_digital.html" class="text-neo-lime font-bold underline">02. Neo Pulse (Dark/AI)</a>
+        <a href="concept_3_metro_commercial.html" class="text-zinc-400 hover:text-white transition">03. Metro Chronicle (Agency)</a>
+        <a href="index.html" class="bg-zinc-800 hover:bg-zinc-700 text-amber-400 px-2.5 py-0.5 rounded transition font-medium border border-amber-400/30">Client Pitch Deck ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Futuristic Top Bar -->
+  <div class="border-b border-neo-border bg-neo-dark/60 text-xs text-zinc-400 py-2">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center gap-4 flex-wrap">
+        <span class="flex items-center gap-1.5 text-zinc-300 font-mono-tech">
+          <span class="w-2 h-2 rounded-full bg-neo-lime animate-ping"></span> SND LIVE STREAM DISPATCH
+        </span>
+        <span class="hidden md:inline text-zinc-700">&bull;</span>
+        <span class="text-xs text-zinc-400">
+          <i class="fa-solid fa-bolt text-neo-lime mr-1"></i> AI Newsroom Engine v3.4 Active
+        </span>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono-tech">
+        <span class="text-neo-cyan"><i class="fa-brands fa-youtube text-red-500 mr-1"></i> Channel Sync: Online</span>
+        <span class="text-zinc-500">|</span>
+        <a href="#studio-calculator" class="text-neo-lime hover:underline font-bold flex items-center gap-1">
+          <i class="fa-solid fa-calculator"></i> Space Rent Calculator
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="sticky top-0 z-40 bg-neo-black/90 backdrop-blur-md border-b border-neo-border">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-6">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-neo-lime to-emerald-400 text-black flex items-center justify-center font-heading font-black text-2xl tracking-tighter shadow-lg shadow-neo-lime/20 group-hover:scale-105 transition">
+          S/
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-black text-2xl tracking-tight text-white">SND<span class="text-neo-lime">.PULSE</span></span>
+            <span class="text-[9px] font-mono-tech bg-neo-border px-1.5 py-0.5 rounded text-zinc-300 uppercase">MEDIA 2.0</span>
+          </div>
+          <span class="text-[10px] text-zinc-400 font-medium">STORIES &bull; YOUTUBE BROADCASTS &bull; STUDIO SPACES</span>
+        </div>
+      </a>
+
+      <!-- Center Navigation -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-bold tracking-wide uppercase">
+        <a href="#feed" class="text-white hover:text-neo-lime transition">Continuous Feed</a>
+        <a href="#ai-radar" class="hover:text-neo-lime text-zinc-400 transition flex items-center gap-1">
+          <i class="fa-solid fa-brain text-neo-cyan"></i> AI Sentiment
+        </a>
+        <a href="#shorts-hub" class="hover:text-neo-lime text-zinc-400 transition flex items-center gap-1">
+          <i class="fa-brands fa-youtube text-red-500"></i> Shorts & Video
+        </a>
+        <a href="#studio-calculator" class="text-neo-lime hover:text-white transition flex items-center gap-1.5 bg-neo-lime/10 px-3 py-1.5 rounded-full border border-neo-lime/30">
+          <i class="fa-solid fa-door-open"></i> Rent Studio Space
+        </a>
+        <a href="#sponsor-slots" class="text-zinc-400 hover:text-white transition">Ad Spaces</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="#studio-calculator" class="bg-neo-lime hover:bg-lime-400 text-black font-extrabold text-xs px-4 py-2 rounded-lg transition shadow-md shadow-neo-lime/20 flex items-center gap-1.5">
+          <i class="fa-solid fa-calendar-check"></i> Book Space
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section: AI Trend Radar & Lead Video/News Fusion -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- AI News Pulse & Live Sentiment Header Bar -->
+    <div id="ai-radar" class="bg-neo-card border border-neo-border rounded-2xl p-4 md:p-6 mb-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+      <div class="absolute -left-12 -top-12 w-32 h-32 bg-neo-lime/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-neo-lime/20 border border-neo-lime/40 flex items-center justify-center text-neo-lime text-xl shrink-0">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-heading font-bold text-white text-base">SND AI Sentiment Radar</span>
+            <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-mono-tech px-2 py-0.5 rounded-full border border-emerald-500/30">
+              REAL-TIME (2,410 DATA SOURCES)
+            </span>
+          </div>
+          <p class="text-xs text-zinc-400 mt-0.5">Tracking national sentiment across Economy, Innovation, and Governance.</p>
+        </div>
+      </div>
+
+      <!-- Live Radar Metrics -->
+      <div class="grid grid-cols-3 gap-3 w-full md:w-auto font-mono-tech text-center">
+        <div class="bg-neo-black/60 border border-zinc-800 p-2.5 rounded-xl">
+          <span class="text-[10px] text-zinc-400 block uppercase">Economy</span>
+          <span class="text-xs font-bold text-neo-lime">78% BULLISH</span>
+        </div>
+        <div class="bg-neo-black/60 border border-zinc-800 p-2.5 rounded-xl">
+          <span class="text-[10px] text-zinc-400 block uppercase">Tech & AI</span>
+          <span class="text-xs font-bold text-neo-cyan">92% RAPID RISE</span>
+        </div>
+        <div class="bg-neo-black/60 border border-zinc-800 p-2.5 rounded-xl">
+          <span class="text-[10px] text-zinc-400 block uppercase">Studio Rent</span>
+          <span class="text-xs font-bold text-neo-orange">85% OCCUPIED</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Grid: Lead Story + Continuous Feed + YouTube Live Stream -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left 7 Cols: Lead Feature & Deep Reporting -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Hero Card -->
+        <article class="bg-neo-card border border-neo-border rounded-2xl overflow-hidden group hover:border-zinc-700 transition">
+          <div class="relative h-80 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Semiconductor India Mission" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-neo-black via-neo-black/40 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-neo-lime text-black font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Lead Investigation
+              </span>
+              <span class="bg-zinc-950/80 backdrop-blur text-zinc-300 font-mono-tech text-[10px] px-2.5 py-1 rounded-full border border-zinc-700">
+                #HardwareRenaissance
+              </span>
+            </div>
+
+            <!-- YouTube Video Badge -->
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-[11px] font-mono-tech text-neo-lime font-bold uppercase tracking-wider block mb-1">
+                <i class="fa-solid fa-microchip mr-1"></i> Special Report &bull; 6 Min Read
+              </span>
+              <h1 class="text-xl md:text-3xl font-extrabold text-white leading-snug group-hover:text-neo-lime transition">
+                The ₹76,000 Crore Chip Gamble: Inside India’s Race to Fabricate Its Own Silicon
+              </h1>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+              With commercial pilot runs underway at Gujarat’s Dholera and Assam’s packaging hubs, Indian engineering teams are testing homegrown 28nm chips that could power domestic automotive and aerospace hardware by 2027.
+            </p>
+
+            <!-- AI Summary Box -->
+            <div class="bg-neo-black p-4 rounded-xl border border-zinc-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono-tech text-neo-cyan font-bold flex items-center gap-1.5">
+                  <i class="fa-solid fa-robot"></i> SND AI Fact Verification: 99.4% Verified
+                </span>
+                <span class="text-[10px] text-zinc-500 font-mono-tech">Model: Claude/Gemini News-Verify</span>
+              </div>
+              <p class="text-xs text-zinc-400">
+                &bull; Commercial equipment installs confirmed at 3 mega-sites with 12 global suppliers on ground.<br>
+                &bull; Potential supply bottleneck: High-purity ultra-clean water pipeline scheduled for Q2 delivery.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-between pt-4 mt-4 border-t border-neo-border text-xs text-zinc-400">
+              <div class="flex items-center gap-2">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Reporter" class="w-6 h-6 rounded-full object-cover">
+                <span>By Priya Nambiar &bull; Silicon Desk</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <button class="hover:text-neo-lime transition" title="Share to WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></button>
+                <button class="hover:text-neo-lime transition" title="Share to Twitter"><i class="fa-brands fa-x-twitter text-sm"></i></button>
+                <button class="hover:text-neo-lime transition" title="Save Story"><i class="fa-regular fa-bookmark text-sm"></i></button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Continuous News Stream Streamline (Continuous Stream Requirement) -->
+        <div id="feed" class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-bold flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-neo-lime"></span> Continuous Live Wire
+            </h2>
+            <span class="text-xs text-zinc-400 font-mono-tech">Auto-Refreshes Every 60s</span>
+          </div>
+
+          <div class="space-y-3">
+            
+            <!-- Wire Item 1 -->
+            <div class="bg-neo-card p-4 rounded-xl border border-neo-border hover:border-neo-lime/40 transition flex items-start gap-4">
+              <span class="text-xs font-mono-tech font-bold text-neo-lime bg-neo-lime/10 px-2 py-1 rounded shrink-0">13:28</span>
+              <div class="flex-1">
+                <span class="text-[10px] font-mono-tech text-zinc-400 uppercase tracking-wider">Aviation & Mobility</span>
+                <h3 class="text-sm font-bold text-white hover:text-neo-lime transition mt-0.5">
+                  Civil Aviation Ministry Clears 18 New Green-Field Regional Air Routes in Eastern India
+                </h3>
+                <p class="text-xs text-zinc-400 mt-1 line-clamp-1">Expected to boost regional tourist transit by 34% over next quarter.</p>
+              </div>
+            </div>
+
+            <!-- Wire Item 2 -->
+            <div class="bg-neo-card p-4 rounded-xl border border-neo-border hover:border-neo-lime/40 transition flex items-start gap-4">
+              <span class="text-xs font-mono-tech font-bold text-neo-cyan bg-neo-cyan/10 px-2 py-1 rounded shrink-0">12:54</span>
+              <div class="flex-1">
+                <span class="text-[10px] font-mono-tech text-zinc-400 uppercase tracking-wider">Markets & FinTech</span>
+                <h3 class="text-sm font-bold text-white hover:text-neo-lime transition mt-0.5">
+                  UPI Crosses 16 Billion Monthly Transactions Milestone as Cross-Border Hubs Expand
+                </h3>
+                <p class="text-xs text-zinc-400 mt-1 line-clamp-1">Singapore, UAE, and Mauritius volume records highest adoption surge.</p>
+              </div>
+            </div>
+
+            <!-- Wire Item 3 -->
+            <div class="bg-neo-card p-4 rounded-xl border border-neo-border hover:border-neo-lime/40 transition flex items-start gap-4">
+              <span class="text-xs font-mono-tech font-bold text-neo-orange bg-neo-orange/10 px-2 py-1 rounded shrink-0">12:10</span>
+              <div class="flex-1">
+                <span class="text-[10px] font-mono-tech text-zinc-400 uppercase tracking-wider">Media & Space</span>
+                <h3 class="text-sm font-bold text-white hover:text-neo-lime transition mt-0.5">
+                  SND Media House Signs Production Tie-Up with Top 5 Regional Creator Studios
+                </h3>
+                <p class="text-xs text-zinc-400 mt-1 line-clamp-1">Providing state-of-the-art chroma soundstages and podcast recording infrastructure.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right 5 Cols: YouTube Channel Video Desk + Interactive Space Calculator -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- YOUTUBE VIDEO DESK & CHANNEL STREAM -->
+        <div id="shorts-hub" class="bg-neo-card border border-red-500/30 rounded-2xl p-5 shadow-2xl relative overflow-hidden">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center text-lg">
+                <i class="fa-brands fa-youtube"></i>
+              </div>
+              <div>
+                <h3 class="font-heading font-bold text-sm text-white">SND YouTube Channel</h3>
+                <span class="text-[10px] font-mono-tech text-red-400">@SNDMediaLive Official</span>
+              </div>
+            </div>
+            <a href="https://www.youtube.com" target="_blank" class="bg-red-600 hover:bg-red-500 text-white font-bold text-[11px] px-3 py-1.5 rounded-full transition flex items-center gap-1 shadow-md shadow-red-600/30">
+              Subscribe Channel
+            </a>
+          </div>
+
+          <!-- Video Embed Window -->
+          <div class="relative rounded-xl overflow-hidden aspect-video bg-black border border-zinc-800 shadow-inner">
+            <iframe id="neo-yt-frame" class="w-full h-full" src="https://www.youtube-nocookie.com/embed/5qap5aO4i9A?autoplay=0&mute=1&controls=1" title="SND Video Desk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <!-- YouTube Shorts / Mobile-First Video Reel Bar -->
+          <div class="mt-4">
+            <span class="text-[11px] font-mono-tech text-zinc-400 uppercase tracking-wider block mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-play text-red-500"></i> YouTube Shorts & Video Bulletins:
+            </span>
+            <div class="grid grid-cols-3 gap-2">
+              <!-- Reel 1 -->
+              <div onclick="setNeoVideo('jfKfPfyJRdk')" class="bg-neo-black p-2 rounded-lg border border-zinc-800 hover:border-red-500 cursor-pointer transition text-center group">
+                <div class="h-20 bg-zinc-800 rounded overflow-hidden relative mb-1.5">
+                  <img src="https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=200&q=80" alt="Reel" class="w-full h-full object-cover group-hover:scale-105 transition">
+                  <span class="absolute bottom-1 right-1 bg-black/80 text-[9px] font-mono-tech px-1 text-white rounded">0:58</span>
+                </div>
+                <p class="text-[10px] font-medium text-zinc-300 line-clamp-1">Megacity Metro</p>
+              </div>
+
+              <!-- Reel 2 -->
+              <div onclick="setNeoVideo('5qap5aO4i9A')" class="bg-neo-black p-2 rounded-lg border border-zinc-800 hover:border-red-500 cursor-pointer transition text-center group">
+                <div class="h-20 bg-zinc-800 rounded overflow-hidden relative mb-1.5">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=200&q=80" alt="Reel" class="w-full h-full object-cover group-hover:scale-105 transition">
+                  <span class="absolute bottom-1 right-1 bg-black/80 text-[9px] font-mono-tech px-1 text-white rounded">1:12</span>
+                </div>
+                <p class="text-[10px] font-medium text-zinc-300 line-clamp-1">Chip Fab Tour</p>
+              </div>
+
+              <!-- Reel 3 -->
+              <div onclick="setNeoVideo('jfKfPfyJRdk')" class="bg-neo-black p-2 rounded-lg border border-zinc-800 hover:border-red-500 cursor-pointer transition text-center group">
+                <div class="h-20 bg-zinc-800 rounded overflow-hidden relative mb-1.5">
+                  <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=200&q=80" alt="Reel" class="w-full h-full object-cover group-hover:scale-105 transition">
+                  <span class="absolute bottom-1 right-1 bg-black/80 text-[9px] font-mono-tech px-1 text-white rounded">0:45</span>
+                </div>
+                <p class="text-[10px] font-medium text-zinc-300 line-clamp-1">AI In India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE STUDIO SPACE RENTAL CALCULATOR (COMMERCIAL DIFFERENTIATOR) -->
+        <div id="studio-calculator" class="bg-gradient-to-br from-zinc-900 via-neo-card to-zinc-900 border-2 border-neo-lime/50 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+          <div class="flex items-center justify-between mb-4">
+            <span class="bg-neo-lime text-black font-mono-tech text-[10px] font-black uppercase px-2.5 py-1 rounded tracking-wider shadow">
+              <i class="fa-solid fa-calculator mr-1"></i> Interactive Rental Configurator
+            </span>
+            <span class="text-xs text-neo-lime font-mono-tech">Instant Quote</span>
+          </div>
+
+          <h3 class="font-heading text-xl font-extrabold text-white">
+            Rent SND Media House Space
+          </h3>
+          <p class="text-xs text-zinc-400 mt-1">
+            Calculate your cost for shooting floors, podcast suites, and commercial ad slots.
+          </p>
+
+          <!-- Interactive Options Form -->
+          <div class="mt-4 space-y-3.5 text-xs">
+            
+            <!-- Step 1: Select Space -->
+            <div>
+              <label class="block font-mono-tech text-zinc-300 mb-1">1. Select Space / Studio Floor</label>
+              <select id="calc-space" onchange="calculateRental()" class="w-full bg-neo-black border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-neo-lime">
+                <option value="25000">Studio Floor A - 2,200 sq ft Soundstage (Base: ₹25,000/day)</option>
+                <option value="3500">Studio Floor B - 4-Mic Podcast Suite (Base: ₹3,500/hr)</option>
+                <option value="45000">Virtual LED Wall & VFX Stage (Base: ₹45,000/day)</option>
+                <option value="15000">Digital Ad Sponsorship Package (Base: ₹15,000/wk)</option>
+              </select>
+            </div>
+
+            <!-- Step 2: Duration / Hours -->
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block font-mono-tech text-zinc-300 mb-1">2. Duration</label>
+                <select id="calc-duration" onchange="calculateRental()" class="w-full bg-neo-black border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-neo-lime">
+                  <option value="1">1 Unit (Day / Hr)</option>
+                  <option value="2">2 Units</option>
+                  <option value="3">3 Units</option>
+                  <option value="5">5 Units (10% Off)</option>
+                  <option value="7">Full Week (20% Off)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-mono-tech text-zinc-300 mb-1">3. Equipment Addon</label>
+                <select id="calc-addon" onchange="calculateRental()" class="w-full bg-neo-black border border-zinc-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-neo-lime">
+                  <option value="0">Basic Studio Kit (Included)</option>
+                  <option value="5000">4K Sony Cinema 3-Cam (+₹5,000)</option>
+                  <option value="8000">Cinema Cam + Sound Engineer (+₹8,000)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Calculation Output Display -->
+            <div class="bg-neo-black/90 border border-neo-border p-4 rounded-xl flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-zinc-400 block font-mono-tech">ESTIMATED RENTAL COST:</span>
+                <span id="calc-total" class="font-heading font-black text-2xl text-neo-lime tracking-tight">₹25,000</span>
+                <span class="text-[10px] text-zinc-500 block">+ GST as applicable</span>
+              </div>
+              <button onclick="lockRentalBooking()" class="bg-neo-lime hover:bg-lime-400 text-black font-extrabold text-xs px-4 py-2.5 rounded-lg transition shadow-lg shadow-neo-lime/20">
+                Lock Slot via WhatsApp <i class="fa-brands fa-whatsapp ml-1"></i>
+              </button>
+            </div>
+
+            <p class="text-[10px] text-zinc-500 text-center">
+              Includes fiber internet, air-conditioned control room, green rooms & power backup.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Commercial Ad Spaces & Sponsor Slots Section -->
+  <section id="sponsor-slots" class="bg-neo-dark border-t border-neo-border py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-mono-tech text-neo-cyan font-bold uppercase tracking-wider">Monetization & Partner Spaces</span>
+        <h2 class="text-3xl font-extrabold text-white mt-1">SND Commercial Media Inventory</h2>
+        <p class="text-xs text-zinc-400 mt-2">Advertise your brand across our news portal, YouTube live broadcasts, and billboard displays.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Slot 1 -->
+        <div class="bg-neo-card border border-neo-border p-6 rounded-2xl hover:border-neo-cyan transition">
+          <div class="w-10 h-10 rounded-xl bg-neo-cyan/10 text-neo-cyan flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white">Digital Masthead Banners</h3>
+          <p class="text-xs text-zinc-400 mt-2">Prime 970x250 leaderboard and sticky responsive banner placement on high-traffic breaking stories.</p>
+          <div class="mt-4 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
+            <span class="font-mono-tech text-neo-cyan font-bold">From ₹45 CPM</span>
+            <button onclick="alert('Digital Ad Media Kit will be emailed!')" class="text-zinc-300 hover:text-white font-bold underline">Media Kit ↗</button>
+          </div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="bg-neo-card border border-neo-border p-6 rounded-2xl hover:border-red-500 transition">
+          <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-xl mb-4">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white">YouTube Broadcast Sponsorship</h3>
+          <p class="text-xs text-zinc-400 mt-2">Integrated video co-branding, lower-third tickers, and 60-second in-stream segments on YouTube shows.</p>
+          <div class="mt-4 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
+            <span class="font-mono-tech text-red-400 font-bold">540K+ Reach</span>
+            <button onclick="alert('YouTube Sponsor Kit will be emailed!')" class="text-zinc-300 hover:text-white font-bold underline">Sponsor Rate ↗</button>
+          </div>
+        </div>
+
+        <!-- Slot 3 -->
+        <div class="bg-neo-card border border-neo-border p-6 rounded-2xl hover:border-neo-lime transition">
+          <div class="w-10 h-10 rounded-xl bg-neo-lime/10 text-neo-lime flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-city"></i>
+          </div>
+          <h3 class="font-bold text-lg text-white">Physical Media & Hoardings</h3>
+          <p class="text-xs text-zinc-400 mt-2">Outdoor billboard spaces directly outside SND Media House campus facing high-density metro junction.</p>
+          <div class="mt-4 pt-4 border-t border-zinc-800 flex justify-between items-center text-xs">
+            <span class="font-mono-tech text-neo-lime font-bold">3.2M Impressions/Mo</span>
+            <button onclick="alert('Billboard Availability Map will be sent!')" class="text-zinc-300 hover:text-white font-bold underline">Check Dates ↗</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Footer -->
+  <footer class="bg-neo-black border-t border-neo-border py-10 text-xs text-zinc-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded bg-neo-lime text-black font-black flex items-center justify-center font-heading">S/</div>
+        <span class="text-white font-bold text-sm">SND PULSE &bull; MEDIA HOUSE</span>
+      </div>
+      <div class="flex gap-6 text-zinc-400">
+        <a href="#feed" class="hover:text-neo-lime">Continuous News</a>
+        <a href="#shorts-hub" class="hover:text-neo-lime">YouTube Stream</a>
+        <a href="#studio-calculator" class="hover:text-neo-lime">Space Rental Calculator</a>
+        <a href="concept_1_prime_broadcast.html" class="hover:text-white">Concept 01</a>
+        <a href="concept_3_metro_commercial.html" class="hover:text-white">Concept 03</a>
+      </div>
+      <div>
+        &copy; 2026 SND Media House. Built for modern high-performance publishing.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Interactive Rental Calculator & Video Swapping -->
+  <script>
+    function calculateRental() {
+      const base = parseInt(document.getElementById('calc-space').value);
+      const duration = parseInt(document.getElementById('calc-duration').value);
+      const addon = parseInt(document.getElementById('calc-addon').value);
+      
+      let discount = 1.0;
+      if (duration === 5) discount = 0.90;
+      if (duration === 7) discount = 0.80;
+
+      const total = Math.round((base * duration * discount) + addon);
+      document.getElementById('calc-total').innerText = '₹' + total.toLocaleString('en-IN');
+    }
+
+    function lockRentalBooking() {
+      const total = document.getElementById('calc-total').innerText;
+      const spaceSelect = document.getElementById('calc-space');
+      const spaceName = spaceSelect.options[spaceSelect.selectedIndex].text;
+      const message = `Hello SND Media House, I would like to book space: ${spaceName}. Estimated quote: ${total}. Please confirm available dates.`;
+      const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    function setNeoVideo(vidId) {
+      document.getElementById('neo-yt-frame').src = `https://www.youtube-nocookie.com/embed/${vidId}?autoplay=1&mute=0&controls=1`;
+    }
+  </script>
+</body>
+</html>

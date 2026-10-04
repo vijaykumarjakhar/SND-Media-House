@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SND CHRONICLE | National Journal & Commercial Media House</title>
+  <meta name="description" content="SND Media House - Authoritative Indian news reporting, continuous digital updates, official YouTube broadcasts, and premier studio space rentals.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: {
+              bg: '#f8fafc',
+              card: '#ffffff',
+              ink: '#0f172a',
+              muted: '#64748b',
+              border: '#e2e8f0',
+              accent: '#ea580c', // Sunset Tangerine
+              royal: '#1e1b4b', // Deep Midnight Indigo
+              gold: '#d97706',
+              emerald: '#059669'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+    h1, h2, h3, .font-serif-heading { font-family: 'Playfair Display', serif; }
+    .editorial-border { border-color: #e2e8f0; }
+    .editorial-shadow { box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06); }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+    }
+    .live-dot { animation: pulse-dot 1.8s infinite; }
+  </style>
+</head>
+<body class="bg-paper-bg text-paper-ink min-h-screen selection:bg-paper-accent selection:text-white">
+
+  <!-- Concept Navigation Switcher Banner -->
+  <div class="bg-paper-royal text-white text-xs py-1.5 px-4 border-b border-indigo-950">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="bg-paper-accent text-white text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wider">Concept 03</span>
+        <span class="text-indigo-200 font-medium">SND Chronicle — Modern Editorial Broadsheet, AI Audio Narrator & Media Agency Hub</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-indigo-300 hidden sm:inline">Preview Options:</span>
+        <a href="concept_1_prime_broadcast.html" class="text-indigo-200 hover:text-white transition">01. Prime Broadcast</a>
+        <a href="concept_2_neo_digital.html" class="text-indigo-200 hover:text-white transition">02. Neo Pulse (Dark/AI)</a>
+        <a href="concept_3_metro_commercial.html" class="text-amber-300 font-bold underline">03. Metro Chronicle</a>
+        <a href="index.html" class="bg-indigo-900 hover:bg-indigo-800 text-amber-300 px-2.5 py-0.5 rounded transition font-medium border border-amber-400/30">Client Pitch Deck ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Broadsheet Header & Date Line -->
+  <div class="border-b border-paper-border bg-white text-xs text-paper-muted py-2.5">
+    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="font-bold text-paper-ink flex items-center gap-1.5">
+          <i class="fa-solid fa-earth-asia text-paper-accent"></i> NATIONAL EDITION &bull; INDIA
+        </span>
+        <span class="text-slate-300">|</span>
+        <span>Sunday, October 4, 2026</span>
+        <span class="text-slate-300">|</span>
+        <span class="text-paper-emerald font-semibold"><i class="fa-solid fa-arrow-trend-up"></i> MARKETS: SENSEX 84,210 (+0.4%)</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- AI Audio Reader Feature Callout -->
+        <span class="bg-indigo-50 text-indigo-700 font-semibold px-2 py-0.5 rounded border border-indigo-200 text-[11px] flex items-center gap-1">
+          <i class="fa-solid fa-headphones text-paper-accent"></i> AI Voice Audio Reads Enabled
+        </span>
+        <!-- YouTube Subscriber Callout -->
+        <a href="https://www.youtube.com" target="_blank" class="text-red-600 hover:text-red-700 font-bold flex items-center gap-1">
+          <i class="fa-brands fa-youtube"></i> 540,000+ Subscribers
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Newspaper Masthead -->
+  <header class="bg-white border-b border-paper-border">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center relative">
+      
+      <div class="flex justify-between items-center mb-2">
+        <div class="hidden md:block text-left text-xs text-paper-muted">
+          <p class="font-bold text-paper-ink">EDITORIAL DESK</p>
+          <p>Verified Journalism for a Modern Nation</p>
+        </div>
+
+        <!-- Central Bold Serif Brand -->
+        <div class="mx-auto text-center">
+          <a href="#" class="inline-block group">
+            <span class="text-[11px] font-display font-extrabold tracking-[0.25em] text-paper-accent uppercase block mb-1">
+              THE VOICE OF INDEPENDENT MEDIA
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black font-serif text-paper-royal tracking-tight group-hover:text-paper-accent transition">
+              SND CHRONICLE
+            </h1>
+            <p class="text-xs text-paper-muted font-display tracking-widest uppercase mt-1">
+              NEWSROOM &bull; YOUTUBE BROADCAST &bull; COMMERCIAL STUDIO LEASING
+            </p>
+          </a>
+        </div>
+
+        <div class="hidden md:block text-right text-xs text-paper-muted">
+          <a href="#space-agency" class="bg-paper-royal hover:bg-slate-800 text-white font-bold text-xs px-3.5 py-2 rounded shadow transition inline-flex items-center gap-1.5">
+            <i class="fa-solid fa-building-user text-amber-400"></i> Studio & Space Rental
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Clean Editorial Navigation Bar -->
+    <nav class="border-t border-paper-border bg-slate-50 text-xs font-display font-bold uppercase tracking-wider text-slate-700">
+      <div class="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-x-auto">
+        <div class="flex items-center space-x-7 py-3 whitespace-nowrap">
+          <a href="#top-news" class="text-paper-accent hover:text-orange-700 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-paper-accent live-dot"></span> Front Page
+          </a>
+          <a href="#continuous-news" class="hover:text-paper-accent transition">Continuous News</a>
+          <a href="#national" class="hover:text-paper-accent transition">National & States</a>
+          <a href="#business" class="hover:text-paper-accent transition">Business & Startups</a>
+          <a href="#youtube-desk" class="text-red-600 hover:text-red-700 transition flex items-center gap-1">
+            <i class="fa-brands fa-youtube"></i> SND Video Channel
+          </a>
+          <a href="#space-agency" class="text-indigo-900 hover:text-paper-accent transition flex items-center gap-1">
+            <i class="fa-solid fa-video text-paper-gold"></i> Rent Studio Space
+          </a>
+          <a href="#ad-rates" class="hover:text-paper-accent transition">Ad Rates & Hoardings</a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <button onclick="toggleAudioArticle()" class="flex items-center gap-1.5 text-xs text-indigo-900 bg-white border border-slate-300 px-3 py-1 rounded shadow-sm hover:border-paper-accent transition">
+            <i class="fa-solid fa-volume-high text-paper-accent"></i> <span id="listen-btn-text">Listen to AI Voice (3:45)</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Floating / Sticky AI Audio Player Simulator -->
+    <div id="ai-audio-player" class="hidden bg-indigo-950 text-white px-4 py-3 border-b border-indigo-900 text-xs transition">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-paper-accent flex items-center justify-center text-white">
+            <i class="fa-solid fa-podcast"></i>
+          </div>
+          <div>
+            <span class="font-bold text-amber-300">SND AI Voice Engine:</span>
+            <span class="text-slate-200 ml-1">Now Reading: "Inside India's New Urban Corridors"</span>
+          </div>
+        </div>
+
+        <!-- Simulated Player Controls -->
+        <div class="flex items-center gap-4">
+          <button class="hover:text-amber-300"><i class="fa-solid fa-backward-step"></i></button>
+          <button onclick="togglePlayState()" id="audio-play-icon" class="w-7 h-7 rounded-full bg-white text-indigo-950 flex items-center justify-center font-bold">
+            <i class="fa-solid fa-pause text-[11px]"></i>
+          </button>
+          <button class="hover:text-amber-300"><i class="fa-solid fa-forward-step"></i></button>
+          <div class="w-32 md:w-64 bg-slate-700 h-1.5 rounded-full overflow-hidden">
+            <div id="audio-progress" class="bg-paper-accent h-full w-2/5"></div>
+          </div>
+          <span class="text-[11px] text-slate-300 font-mono">01:24 / 03:45</span>
+        </div>
+
+        <button onclick="toggleAudioArticle()" class="text-slate-400 hover:text-white text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Editorial Content & Dual Portal Layout -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Center & Left 8 Columns: Big Editorial Lead + Continuous News Columns -->
+      <div class="lg:col-span-8 space-y-8" id="top-news">
+        
+        <!-- Big Editorial Headline Card -->
+        <article class="bg-white p-6 md:p-8 rounded-xl border border-paper-border editorial-shadow">
+          <div class="border-b border-paper-border pb-4 mb-5 flex flex-wrap justify-between items-center gap-2">
+            <span class="text-xs font-display font-extrabold uppercase text-paper-accent tracking-widest flex items-center gap-1.5">
+              <i class="fa-solid fa-bookmark"></i> LEAD EDITORIAL &bull; NATIONAL INVESTIGATION
+            </span>
+            <div class="flex items-center gap-3 text-xs text-paper-muted">
+              <span>Oct 4, 2026</span>
+              <span>&bull;</span>
+              <span>By Senior Editor K. Ramachandran</span>
+            </div>
+          </div>
+
+          <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold font-serif text-paper-royal leading-[1.15] mb-4">
+            Transforming the Hinterland: How High-Speed Rail & Digital Highways Are Rebalancing Regional Growth
+          </h2>
+
+          <div class="relative rounded-xl overflow-hidden my-6">
+            <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80" alt="Rail & Highway Infrastructure" class="w-full h-80 md:h-96 object-cover">
+            <div class="absolute bottom-3 left-3 bg-black/75 backdrop-blur text-white text-xs px-3 py-1.5 rounded">
+              Expressway infrastructure connects regional commercial hubs across Central India.
+            </div>
+          </div>
+
+          <div class="prose max-w-none text-slate-700 text-sm md:text-base leading-relaxed space-y-4">
+            <p>
+              In what is being termed India's most aggressive decentralization drive in decades, state governments and private industrial consortiums are inaugurating multi-modal logistics corridors. The initiative is already sparking residential and media-infrastructure expansion across Tier-2 city limits.
+            </p>
+            <p>
+              Beyond industrial shipping, media networks and production teams are relocating regional studios closer to emerging cultural capitals, leveraging high-speed fiber backbones to broadcast real-time news without metro overheads.
+            </p>
+          </div>
+
+          <!-- AI Bullet Digest Box -->
+          <div class="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center gap-2 text-xs font-display font-bold text-indigo-900 uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-robot text-paper-accent"></i> SND AI 60-Second Executive Summary:
+            </div>
+            <ul class="text-xs text-slate-600 space-y-1.5">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle text-[6px] text-paper-accent mt-1.5"></i>
+                <span>Over 14,000 kilometers of high-speed optical fiber laid alongside expressways.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle text-[6px] text-paper-accent mt-1.5"></i>
+                <span>Regional media consumption growing at 28% YoY, driving demand for local production studios.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle text-[6px] text-paper-accent mt-1.5"></i>
+                <span>SND Media House launches regional studio leasing network to support local documentary makers.</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Continuous News Stream (Continuous Posts & Articles Requirement) -->
+        <section id="continuous-news" class="bg-white p-6 rounded-xl border border-paper-border editorial-shadow">
+          <div class="flex items-center justify-between border-b border-paper-border pb-4 mb-6">
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-paper-royal">Continuous Newsroom Wire</h3>
+              <p class="text-xs text-paper-muted">Real-time reporting filed continuously by SND correspondents</p>
+            </div>
+            <span class="text-xs font-display font-semibold text-paper-accent bg-orange-50 border border-orange-200 px-3 py-1 rounded-full">
+              Updated Continuously
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Wire Article 1 -->
+            <article class="space-y-2 border-b md:border-b-0 pb-4 md:pb-0">
+              <span class="text-[10px] font-display font-bold text-paper-accent uppercase tracking-wider">Policy & Governance</span>
+              <h4 class="font-serif font-bold text-base text-paper-royal hover:text-paper-accent transition leading-snug">
+                Cabinet Approves Expansion of Digital Public Infrastructure to Rural Healthcare Hubs
+              </h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Telemedicine centers and digital diagnostic clinics will receive satellite bandwidth priority to ensure zero disruption during peak hours.
+              </p>
+              <div class="text-[11px] text-paper-muted flex items-center gap-2 pt-1">
+                <span>12 Mins Ago</span>
+                <span>&bull;</span>
+                <span class="text-indigo-800 font-medium">New Delhi Bureau</span>
+              </div>
+            </article>
+
+            <!-- Wire Article 2 -->
+            <article class="space-y-2 border-b md:border-b-0 pb-4 md:pb-0">
+              <span class="text-[10px] font-display font-bold text-paper-emerald uppercase tracking-wider">Tech & AI Startups</span>
+              <h4 class="font-serif font-bold text-base text-paper-royal hover:text-paper-accent transition leading-snug">
+                Bengaluru AI Lab Releases Open-Source Speech Model Covering 14 Indian Languages
+              </h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                The lightweight model runs natively on budget smartphones, promising breakthrough accessibility for vernacular digital creators.
+              </p>
+              <div class="text-[11px] text-paper-muted flex items-center gap-2 pt-1">
+                <span>38 Mins Ago</span>
+                <span>&bull;</span>
+                <span class="text-indigo-800 font-medium">Tech Desk</span>
+              </div>
+            </article>
+
+            <!-- Wire Article 3 -->
+            <article class="space-y-2">
+              <span class="text-[10px] font-display font-bold text-paper-gold uppercase tracking-wider">Economy & Markets</span>
+              <h4 class="font-serif font-bold text-base text-paper-royal hover:text-paper-accent transition leading-snug">
+                Automotive Sector Reports 19% Festive Sales Spike Driven by Electric Two-Wheelers
+              </h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Subsidized registration charges and battery warranty norms accelerate conversion in non-metro municipal territories.
+              </p>
+              <div class="text-[11px] text-paper-muted flex items-center gap-2 pt-1">
+                <span>1 Hour Ago</span>
+                <span>&bull;</span>
+                <span class="text-indigo-800 font-medium">Markets Bureau</span>
+              </div>
+            </article>
+
+            <!-- Wire Article 4 -->
+            <article class="space-y-2">
+              <span class="text-[10px] font-display font-bold text-indigo-700 uppercase tracking-wider">Media & Culture</span>
+              <h4 class="font-serif font-bold text-base text-paper-royal hover:text-paper-accent transition leading-snug">
+                Independent Documentary Filmmakers Champion Co-Working Media Studios in Metro Centers
+              </h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Shared chroma stages and podcast booths lower production budgets by over 40% for independent digital news outlets.
+              </p>
+              <div class="text-[11px] text-paper-muted flex items-center gap-2 pt-1">
+                <span>2 Hours Ago</span>
+                <span>&bull;</span>
+                <span class="text-indigo-800 font-medium">Entertainment Desk</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right 4 Columns: YouTube Video Channel Player + Commercial Space On Rent -->
+      <div class="lg:col-span-4 space-y-8">
+        
+        <!-- YOUTUBE VIDEO DESK & LIVE STREAM EMBED -->
+        <div id="youtube-desk" class="bg-white p-5 rounded-xl border border-paper-border editorial-shadow">
+          <div class="flex items-center justify-between mb-4 border-b border-paper-border pb-3">
+            <div class="flex items-center gap-2">
+              <i class="fa-brands fa-youtube text-red-600 text-xl"></i>
+              <div>
+                <h3 class="font-serif font-bold text-base text-paper-royal">SND Video Desk</h3>
+                <span class="text-[10px] font-display text-paper-muted uppercase">Official YouTube Channel</span>
+              </div>
+            </div>
+            <a href="https://www.youtube.com" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-display text-[10px] font-bold px-2.5 py-1 rounded shadow transition">
+              Subscribe ↗
+            </a>
+          </div>
+
+          <!-- YouTube Player -->
+          <div class="rounded-lg overflow-hidden aspect-video bg-black shadow-inner">
+            <iframe id="chronicle-yt-frame" class="w-full h-full" src="https://www.youtube-nocookie.com/embed/jfKfPfyJRdk?autoplay=0&mute=1&controls=1" title="SND Video Desk Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <p class="text-xs font-medium text-slate-800 mt-3 font-display">
+            Currently Featured: <strong>Special Edition — Behind the Newsroom with SND Ground Correspondents</strong>
+          </p>
+
+          <!-- Video Playlist Selector -->
+          <div class="mt-4 space-y-2 text-xs border-t border-slate-100 pt-3">
+            <span class="font-bold text-paper-muted uppercase text-[10px] block">Recent Channel Uploads:</span>
+            
+            <div onclick="setChronicleVideo('5qap5aO4i9A')" class="p-2 rounded hover:bg-slate-50 border border-transparent hover:border-slate-200 cursor-pointer transition flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 text-[10px]">
+                <i class="fa-solid fa-play"></i>
+              </span>
+              <div class="flex-1">
+                <p class="font-semibold text-slate-800 line-clamp-1">Ground Zero: India's AI Infrastructure Drive</p>
+                <span class="text-[10px] text-slate-400">14:10 mins &bull; 32K views</span>
+              </div>
+            </div>
+
+            <div onclick="setChronicleVideo('jfKfPfyJRdk')" class="p-2 rounded hover:bg-slate-50 border border-transparent hover:border-slate-200 cursor-pointer transition flex items-center gap-2.5">
+              <span class="w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center shrink-0 text-[10px]">
+                <i class="fa-solid fa-play"></i>
+              </span>
+              <div class="flex-1">
+                <p class="font-semibold text-slate-800 line-clamp-1">Economy Debate: Urban Transit & Real Estate</p>
+                <span class="text-[10px] text-slate-400">24:45 mins &bull; 89K views</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMMERCIAL SPACE & STUDIO LEASING SUITE (PRIMARY CLIENT REQUIREMENT) -->
+        <div id="space-agency" class="bg-gradient-to-b from-paper-royal to-[#12102e] text-white p-6 rounded-xl shadow-xl relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <span class="bg-paper-gold text-slate-950 font-display font-extrabold text-[10px] uppercase px-2 py-0.5 rounded tracking-wider">
+              Commercial Real Estate
+            </span>
+            <span class="text-amber-300 font-mono text-xs">Direct Owner Lease</span>
+          </div>
+
+          <h3 class="font-serif text-2xl font-bold text-white leading-tight">
+            Rent SND Media House Space
+          </h3>
+          <p class="text-xs text-indigo-200 mt-2 leading-relaxed">
+            Need commercial studio floors, podcast booths, or outdoor advertising hoarding space? SND Media House rents premium facilities with turnkey production setups.
+          </p>
+
+          <!-- Space Rental Inventory Checklist -->
+          <div class="my-4 space-y-2.5 text-xs border-y border-indigo-900 py-4">
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-paper-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white">Studio 01 (Shooting Floor):</strong>
+                <p class="text-indigo-300 text-[11px]">2,200 sq ft &bull; 16ft ceiling &bull; Chroma wall &bull; Light grid</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-paper-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white">Studio 02 (Acoustic Podcast Suite):</strong>
+                <p class="text-indigo-300 text-[11px]">4-Mic Shure broadcast setup &bull; 4K camera angles &bull; Sound engineer</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-paper-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white">Outdoor Billboards & Hoardings:</strong>
+                <p class="text-indigo-300 text-[11px]">High-visibility digital LED hoardings at Media Hub junction</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-paper-gold mt-0.5"></i>
+              <div>
+                <strong class="text-white">Website & YouTube Video Ad Slots:</strong>
+                <p class="text-indigo-300 text-[11px]">Leaderboard banners & video sponsor segments</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="space-y-2">
+            <button onclick="openBrochureModal()" class="w-full bg-paper-accent hover:bg-orange-600 text-white font-display font-bold text-xs py-2.5 rounded transition shadow-lg flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-download"></i> Download Studio Rate Card & Floorplan
+            </button>
+            <a href="https://wa.me/919876543210?text=Hello%20SND%20Media%20House,%20I%20am%20interested%20in%20renting%20studio/media%20space" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-display font-bold text-xs py-2.5 rounded transition flex items-center justify-center gap-1.5">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Inquire Space Availability on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Editorial Newsletter Signup -->
+        <div class="bg-white p-5 rounded-xl border border-paper-border editorial-shadow text-xs">
+          <h4 class="font-serif font-bold text-base text-paper-royal">The Morning Dispatch</h4>
+          <p class="text-slate-500 mt-1 mb-3">Get the day's top headlines, video explainers, and media intelligence delivered at 8 AM.</p>
+          <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');" class="space-y-2">
+            <input type="email" required placeholder="Enter your email address..." class="w-full border border-slate-300 rounded p-2 text-slate-800 focus:outline-none focus:border-paper-accent">
+            <button type="submit" class="w-full bg-paper-royal hover:bg-slate-800 text-white font-bold py-2 rounded font-display transition">
+              Subscribe to Morning Brief
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive Rate Card & Brochure Modal -->
+  <div id="brochure-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative border border-slate-200">
+      <button onclick="closeBrochureModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="text-center mb-5">
+        <div class="w-12 h-12 rounded-full bg-orange-100 text-paper-accent flex items-center justify-center mx-auto text-xl mb-2">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h4 class="font-serif font-bold text-xl text-paper-royal">SND Media House Commercial Rate Card</h4>
+        <p class="text-xs text-slate-500 mt-1">Get comprehensive pricing for Studio Floors, Podcast Suites & Advertising Hoardings</p>
+      </div>
+
+      <form onsubmit="handleBrochureDownload(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Full Name</label>
+          <input type="text" required placeholder="Enter your name" class="w-full border border-slate-300 rounded p-2 focus:outline-none focus:border-paper-accent">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Company / Production</label>
+            <input type="text" required placeholder="Organization name" class="w-full border border-slate-300 rounded p-2 focus:outline-none focus:border-paper-accent">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">WhatsApp Number</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full border border-slate-300 rounded p-2 focus:outline-none focus:border-paper-accent">
+          </div>
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Primary Interest</label>
+          <select class="w-full border border-slate-300 rounded p-2 focus:outline-none focus:border-paper-accent">
+            <option>Studio Floor A - 2,200 sq ft Shooting Stage</option>
+            <option>Studio Floor B - Visual Podcast Suite</option>
+            <option>Digital Website Ad Inventory & Sponsor Banners</option>
+            <option>Outdoor LED Billboard & Hoardings</option>
+            <option>Long-Term Media House Office Lease</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-paper-accent hover:bg-orange-600 text-white font-bold py-2.5 rounded transition text-xs shadow-md mt-2">
+          Download PDF Rate Card & Floorplan
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Editorial Footer -->
+  <footer class="bg-paper-royal text-indigo-100 border-t border-indigo-950 pt-12 pb-8 text-xs">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-serif font-bold text-xl text-white mb-2">SND CHRONICLE</h4>
+          <p class="text-indigo-300 leading-relaxed text-xs">
+            Published daily by SND Media House Private Limited. Committed to factual reporting, digital multimedia broadcasts, and state-of-the-art production studio services.
+          </p>
+        </div>
+        <div>
+          <h5 class="font-display font-bold text-white uppercase text-[11px] mb-3">News Sections</h5>
+          <ul class="space-y-2 text-indigo-300">
+            <li><a href="#" class="hover:text-white">National Affairs</a></li>
+            <li><a href="#" class="hover:text-white">Business & Startups</a></li>
+            <li><a href="#" class="hover:text-white">Science & Tech</a></li>
+            <li><a href="#" class="hover:text-white">YouTube Video Desk</a></li>
+            <li><a href="#" class="hover:text-white">Continuous News Wire</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-display font-bold text-white uppercase text-[11px] mb-3">Studio & Space Leasing</h5>
+          <ul class="space-y-2 text-indigo-300">
+            <li><a href="#space-agency" class="hover:text-amber-300">Soundstage Studio Floor 1</a></li>
+            <li><a href="#space-agency" class="hover:text-amber-300">Acoustic Podcast Suite 2</a></li>
+            <li><a href="#space-agency" class="hover:text-amber-300">Outdoor LED Billboard Hoardings</a></li>
+            <li><a href="#space-agency" class="hover:text-amber-300">YouTube Video Co-Branding</a></li>
+            <li><a href="#space-agency" class="hover:text-amber-300">Download Commercial Rate Card</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-display font-bold text-white uppercase text-[11px] mb-3">SND Media House Campus</h5>
+          <p class="text-indigo-300 leading-relaxed">
+            SND Media House Complex, Plot 14, Institutional Area, Film City, Noida, UP &bull; 201301<br><br>
+            <strong>Newsroom:</strong> news@sndchronicle.in<br>
+            <strong>Space & Studio Rental:</strong> leasing@sndmediahouse.in<br>
+            <strong>Helpline:</strong> +91 (011) 2890-4400
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-indigo-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-indigo-400 text-[11px]">
+        <div>&copy; 2026 SND Media House. All rights reserved. Registered under Press & Registration of Books Act.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Terms of Use</a>
+          <a href="#" class="hover:underline">Rental Regulations</a>
+          <a href="#" class="hover:underline">Contact Desk</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts for Audio Narrator & Video Swapping -->
+  <script>
+    let isPlaying = true;
+    function toggleAudioArticle() {
+      const player = document.getElementById('ai-audio-player');
+      player.classList.toggle('hidden');
+    }
+
+    function togglePlayState() {
+      const icon = document.getElementById('audio-play-icon');
+      isPlaying = !isPlaying;
+      icon.innerHTML = isPlaying ? '<i class="fa-solid fa-pause text-[11px]"></i>' : '<i class="fa-solid fa-play text-[11px]"></i>';
+    }
+
+    function setChronicleVideo(vidId) {
+      document.getElementById('chronicle-yt-frame').src = `https://www.youtube-nocookie.com/embed/${vidId}?autoplay=1&mute=0&controls=1`;
+    }
+
+    function openBrochureModal() {
+      document.getElementById('brochure-modal').classList.remove('hidden');
+      document.getElementById('brochure-modal').classList.add('flex');
+    }
+
+    function closeBrochureModal() {
+      document.getElementById('brochure-modal').classList.add('hidden');
+      document.getElementById('brochure-modal').classList.remove('flex');
+    }
+
+    function handleBrochureDownload(e) {
+      e.preventDefault();
+      alert('Thank you! SND Media House Rate Card PDF download has commenced.');
+      closeBrochureModal();
+    }
+  </script>
+</body>
+</html>
