@@ -1,0 +1,13 @@
+# ==============================================================================
+# SND Media (sndmedia.in) — Robots Exclusion Protocol
+# ==============================================================================
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /database/
+Disallow: /includes/
+
+# Sitemap Location
+Sitemap: https://sndmedia.in/sitemap.xml
