@@ -1,0 +1,38 @@
+# Local environment & secrets
+.env
+.env.*
+!.env.example
+
+# Runtime uploaded media (preserve empty folder structure)
+assets/uploads/*
+!assets/uploads/ads/
+!assets/uploads/articles/
+!assets/uploads/docs/
+!assets/uploads/facilities/
+assets/uploads/ads/*
+!assets/uploads/ads/.gitkeep
+assets/uploads/articles/*
+!assets/uploads/articles/.gitkeep
+assets/uploads/docs/*
+!assets/uploads/docs/.gitkeep
+assets/uploads/facilities/*
+!assets/uploads/facilities/.gitkeep
+
+# Non-runtime prototypes, client presentation deck, and redundant/unused assets
+SND_Media_House_Phase1_Client_Signoff.pptx
+generate_deck.py
+presentation.html
+concept_1_prime_broadcast.html
+sitemap.xml
+assets/images/snd-channel-banner.png
+
+# Logs, backups, Python cache, and OS/IDE files
+*.log
+*.bak
+*.swp
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
