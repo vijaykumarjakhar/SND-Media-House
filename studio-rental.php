@@ -9,8 +9,16 @@ require_once __DIR__ . '/config/settings.php';
 require_once __DIR__ . '/includes/functions.php';
 
 $settings = get_all_settings();
-$page_title = 'Studio Rental, Production Floors & Ad Space';
-$seo_desc = 'Commercial studio rentals, chroma stages, podcast recording suites & outdoor billboard advertising at SND Public School Campus, Palwal (Delhi NCR). Rates from ₹3,500/hr.';
+$site_domain = $settings['site_domain'] ?? 'sndmedia.in';
+$page_title = 'Studio Rental, Production Floors & Ad Space | Palwal, Delhi NCR';
+$seo_desc = 'Commercial broadcast studios, soundproof chroma stages, 4-mic podcast suites & highway outdoor hoardings on rent at SND Public School Campus, Palwal (Delhi NCR). From ₹3,500/hr.';
+$canonical_url = 'https://' . $site_domain . '/studio-rental';
+$seo_type = 'service';
+$seo_keywords = 'studio rental Palwal, podcast studio Delhi NCR, chroma green screen stage hire, video production studio Haryana, highway billboard advertising Palwal';
+$breadcrumbs = [
+    ['name' => 'Home', 'url' => 'https://' . $site_domain . '/'],
+    ['name' => 'Studio Space & Advertising Rentals', 'url' => 'https://' . $site_domain . '/studio-rental']
+];
 $active_nav = 'rental';
 
 require_once __DIR__ . '/includes/header.php';

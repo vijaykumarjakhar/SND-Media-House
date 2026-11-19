@@ -55,8 +55,15 @@ $policy_configs = [
 $active_policy = $policy_configs[$policy_key] ?? $policy_configs['privacy'];
 $policy_content = get_setting($active_policy['setting_key']);
 
-$page_title = $active_policy['title'] . ' | Compliance';
+$domain = $settings['site_domain'] ?? 'sndmedia.in';
+$canonical_url = 'https://' . $domain . '/legal/' . urlencode($policy_key);
+$page_title = $active_policy['title'] . ' | Legal Compliance & Policy';
 $seo_desc = $active_policy['subtitle'];
+$breadcrumbs = [
+    ['name' => 'Home', 'url' => 'https://' . $domain . '/'],
+    ['name' => 'Legal & Governance Desk', 'url' => 'https://' . $domain . '/legal/privacy-policy'],
+    ['name' => $active_policy['title'], 'url' => $canonical_url]
+];
 $active_nav = 'legal';
 
 require_once __DIR__ . '/includes/header.php';

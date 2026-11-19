@@ -66,15 +66,24 @@ if (!$article) {
     ];
 }
 
+$domain = $settings['site_domain'] ?? 'sndmedia.in';
+$canonical_url = 'https://' . $domain . '/article/' . urlencode($article['slug']);
 $page_title = $article['title'];
 $seo_desc = $article['summary'];
 $seo_type = 'article';
 $seo_article = $article;
+$seo_image = !empty($article['featured_image']) ? $article['featured_image'] : null;
+$seo_keywords = ($article['category'] ?? 'news') . ', ' . ($article['subcategory'] ?? 'investigation') . ', SND Media, ' . $article['title'];
+$breadcrumbs = [
+    ['name' => 'Home', 'url' => 'https://' . $domain . '/'],
+    ['name' => ucfirst($article['category'] ?? 'News'), 'url' => 'https://' . $domain . '/index.php?cat=' . urlencode($article['category'] ?? 'news')],
+    ['name' => $article['title'], 'url' => $canonical_url]
+];
 $active_nav = $article['category'];
 
 require_once __DIR__ . '/includes/header.php';
 
-$current_url = 'https://' . ($settings['site_domain'] ?? 'sndmedia.in') . '/article/' . urlencode($article['slug']);
+$current_url = $canonical_url;
 ?>
 
 <main class="max-w-4xl mx-auto px-4 py-8">

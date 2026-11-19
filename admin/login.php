@@ -21,7 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $identifier = trim(isset($_POST['identifier']) ? $_POST['identifier'] : '');
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    if (!csrf_token_validate($token)) {
+    $failed_attempts = isset($_SESSION['login_failed_attempts']) ? (int)$_SESSION['login_failed_attempts'] : 0;
+    $lockout_until = isset($_SESSION['login_lockout_until']) ? (int)$_SESSION['login_lockout_until'] : 0;
+    $now = time();
+
+    if ($lockout_until > $now) {
+        $remaining = ceil(($lockout_until - $now) / 60);
+        $error = "Too many failed login attempts. Account access is temporarily locked for security. Please try again in {$remaining} minute(s).";
+    } elseif (!csrf_token_validate($token)) {
         $error = 'Security session expired. Please refresh and try again.';
     } elseif (empty($identifier) || empty($password)) {
         $error = 'Please enter your username/email and password.';
@@ -37,6 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ((int)$user['is_active'] !== 1) {
                         $error = 'Your account has been deactivated. Please contact your system administrator.';
                     } else {
+                        // Clear failed attempts upon successful authentication
+                        unset($_SESSION['login_failed_attempts'], $_SESSION['login_lockout_until']);
+
                         // Successful login
                         session_regenerate_id(true);
                         $_SESSION['user_id'] = $user['id'];
@@ -53,8 +63,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         exit;
                     }
                 } else {
-                    // Generic security message (no field disclosure)
-                    $error = 'Invalid username/email or password.';
+                    // Increment failed attempt counter
+                    $failed_attempts++;
+                    $_SESSION['login_failed_attempts'] = $failed_attempts;
+                    if ($failed_attempts >= 5) {
+                        $_SESSION['login_lockout_until'] = time() + 300; // 5-minute lockout
+                        $error = 'Too many failed login attempts. Access temporarily locked for 5 minutes.';
+                    } else {
+                        $remaining_attempts = 5 - $failed_attempts;
+                        $error = "Invalid username/email or password. ({$remaining_attempts} attempt" . ($remaining_attempts === 1 ? '' : 's') . " remaining)";
+                    }
                 }
             } catch (Exception $e) {
                 error_log("Login DB Query failed: " . $e->getMessage());
@@ -63,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             // Local fallback demo mode when MySQL service is offline
             if ($identifier === 'admin' && $password === 'AdminPassword123!') {
+                unset($_SESSION['login_failed_attempts'], $_SESSION['login_lockout_until']);
                 session_regenerate_id(true);
                 $_SESSION['user_id'] = 1;
                 $_SESSION['user_role'] = 'super_admin';
@@ -72,7 +91,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: index.php');
                 exit;
             } else {
-                $error = 'Database offline and credentials did not match emergency fallback.';
+                $failed_attempts++;
+                $_SESSION['login_failed_attempts'] = $failed_attempts;
+                if ($failed_attempts >= 5) {
+                    $_SESSION['login_lockout_until'] = time() + 300;
+                    $error = 'Too many failed login attempts. Access temporarily locked for 5 minutes.';
+                } else {
+                    $error = 'Database offline and credentials did not match emergency fallback.';
+                }
             }
         }
     }

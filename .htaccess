@@ -29,6 +29,8 @@ AddDefaultCharset UTF-8
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set X-XSS-Protection "1; mode=block"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
     # Conceal Backend Technology Footprint
     Header unset X-Powered-By
@@ -53,7 +55,7 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 # 4. Block Direct Access to Sensitive Files & Folders
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env)|composer\.(json|lock)|^web\.config)$">
+<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env)|composer\.(json|lock)|package\.(json|lock)|package-lock\.json|tailwind\.config\.js|^web\.config)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>

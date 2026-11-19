@@ -10,12 +10,9 @@ require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/config/settings.php';
 require_once __DIR__ . '/includes/functions.php';
 
-$seo = [
-    'title' => 'Page Not Found (404) | SND Media',
-    'description' => 'The story, broadcast, or resource you requested could not be located on SND Media.',
-    'url' => 'https://sndmedia.in/404',
-    'noindex' => true
-];
+$page_title = 'Page Not Found (404) | SND Media';
+$seo_desc = 'The story, broadcast, or resource you requested could not be located on SND Media.';
+$noindex = true;
 
 include __DIR__ . '/includes/header.php';
 ?>

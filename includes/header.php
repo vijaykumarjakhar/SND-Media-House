@@ -48,7 +48,19 @@ $active_nav = $active_nav ?? '';
   ?>
   <base href="<?= htmlspecialchars($base_href, ENT_QUOTES, 'UTF-8') ?>">
   
-  <?php render_seo_tags(['title' => $page_title, 'description' => $seo_desc ?? null, 'type' => $seo_type ?? 'website', 'article' => $seo_article ?? null]); ?>
+  <?php 
+    render_seo_tags([
+        'title' => $page_title ?? null,
+        'description' => $seo_desc ?? null,
+        'type' => $seo_type ?? 'website',
+        'article' => $seo_article ?? null,
+        'canonical' => $canonical_url ?? null,
+        'image' => $seo_image ?? null,
+        'noindex' => $noindex ?? false,
+        'breadcrumbs' => $breadcrumbs ?? null,
+        'keywords' => $seo_keywords ?? null
+    ]); 
+  ?>
 
   <link rel="icon" type="image/svg+xml" href="assets/images/snd-logo.svg">
   <link rel="alternate icon" href="favicon.ico">

@@ -105,7 +105,10 @@ if (empty($secondary_articles)) {
     ];
 }
 
-$page_title = 'National News & Media Network';
+$page_title = 'National News, Broadcast Network & Production Hub';
+$seo_desc = 'SND Media — 24/7 Digital Newsroom, Official @sndschoolmedia Broadcasts & Commercial Production Studio Rentals at SND Public School Campus, Palwal (Delhi NCR).';
+$canonical_url = 'https://' . ($settings['site_domain'] ?? 'sndmedia.in') . '/';
+$seo_keywords = 'SND Media, SND News, Palwal news, Haryana news, national breaking news, broadcast studio rental, Delhi NCR studio space, live news stream';
 $active_nav = 'live';
 
 require_once __DIR__ . '/includes/header.php';
