@@ -21,6 +21,7 @@ function render_admin_header($page_title = 'Dashboard', $active_nav = 'dashboard
     <title><?= sanitize_output($page_title) ?> | SND Media Admin Console</title>
     <!-- Pre-compiled Tailwind CSS -->
     <link rel="stylesheet" href="../assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }

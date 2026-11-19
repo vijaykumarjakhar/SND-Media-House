@@ -74,7 +74,7 @@ $settings = get_all_settings();
       <!-- Legal Links & Copyright -->
       <div class="border-t border-slate-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-slate-500">
         <div class="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
-          <span>&copy; <?= date('Y') ?> SND Media Pvt. Ltd. (<?= sanitize_output($settings['site_domain'] ?? 'sndmedia.in') ?>). All Rights Reserved.</span>
+          <span>&copy; <?= date('Y') ?> SND Media (<?= sanitize_output($settings['site_domain'] ?? 'sndmedia.in') ?>). All Rights Reserved.</span>
           <span class="hidden sm:inline text-slate-700">&bull;</span>
           <span>Developed by <a href="https://securetechnology.in" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline transition inline-flex items-center gap-1 group"><i class="fa-solid fa-shield-halved text-[10px] text-emerald-400"></i> <span class="text-emerald-400 group-hover:text-emerald-300" style="color: #34d399;">Secure</span><span class="text-sky-400 group-hover:text-sky-300" style="color: #38bdf8;">Technology</span></a></span>
         </div>
