@@ -34,11 +34,11 @@ $settings = get_all_settings();
         <div>
           <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">News Desks</h4>
           <ul class="space-y-2">
-            <li><a href="index.php#national" class="hover:text-white transition">National & Politics</a></li>
-            <li><a href="index.php#business" class="hover:text-white transition">Economy, Markets & Budget</a></li>
-            <li><a href="index.php#business" class="hover:text-white transition">Technology & AI Startups</a></li>
-            <li><a href="index.php#youtube-hub" class="hover:text-white transition">Broadcast Bulletins (@sndschoolmedia)</a></li>
-            <li><a href="index.php#special-reports" class="hover:text-white transition">Special Ground Investigations</a></li>
+            <li><a href="category/national" class="hover:text-white transition">National & Politics</a></li>
+            <li><a href="category/business" class="hover:text-white transition">Economy, Markets & Budget</a></li>
+            <li><a href="category/tech" class="hover:text-white transition">Technology & AI Startups</a></li>
+            <li><a href="./#youtube-hub" class="hover:text-white transition">Broadcast Bulletins (@sndschoolmedia)</a></li>
+            <li><a href="category/exclusive" class="hover:text-white transition">Special Ground Investigations</a></li>
           </ul>
         </div>
 

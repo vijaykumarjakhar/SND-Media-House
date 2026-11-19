@@ -161,8 +161,8 @@ $active_nav = $active_nav ?? '';
           <a href="./#breaking" class="text-white hover:text-brand-red transition flex items-center gap-1.5 <?= $active_nav === 'live' ? 'text-brand-red' : '' ?>">
             <span class="w-2 h-2 rounded-full bg-brand-red animate-ping"></span> Live Desk
           </a>
-          <a href="./#national" class="hover:text-brand-red transition <?= $active_nav === 'national' ? 'text-brand-red' : '' ?>">National</a>
-          <a href="./#business" class="hover:text-brand-red transition <?= $active_nav === 'business' ? 'text-brand-red' : '' ?>">Business & Tech</a>
+          <a href="category/national" class="hover:text-brand-red transition <?= $active_nav === 'national' ? 'text-brand-red' : '' ?>">National</a>
+          <a href="category/business" class="hover:text-brand-red transition <?= $active_nav === 'business' ? 'text-brand-red' : '' ?>">Business & Tech</a>
           <a href="./#youtube-hub" class="hover:text-brand-red transition flex items-center gap-1.5 text-rose-400 <?= $active_nav === 'youtube' ? 'text-rose-300' : '' ?>">
             <i class="fa-brands fa-youtube"></i> YouTube TV
           </a>
@@ -190,8 +190,8 @@ $active_nav = $active_nav ?? '';
         <a href="./#breaking" onclick="toggleMobileMenu()" class="text-white hover:text-brand-red flex items-center gap-2 py-1">
           <span class="w-2 h-2 rounded-full bg-brand-red"></span> Live Desk 24x7
         </a>
-        <a href="./#national" onclick="toggleMobileMenu()" class="hover:text-brand-red py-1">National News & Politics</a>
-        <a href="./#business" onclick="toggleMobileMenu()" class="hover:text-brand-red py-1">Business & Tech</a>
+        <a href="category/national" onclick="toggleMobileMenu()" class="hover:text-brand-red py-1">National News & Politics</a>
+        <a href="category/business" onclick="toggleMobileMenu()" class="hover:text-brand-red py-1">Business & Tech</a>
         <a href="./#youtube-hub" onclick="toggleMobileMenu()" class="hover:text-brand-red text-rose-400 flex items-center gap-2 py-1">
           <i class="fa-brands fa-youtube"></i> YouTube TV (@sndschoolmedia)
         </a>

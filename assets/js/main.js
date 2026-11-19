@@ -4,9 +4,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Pre-activate category tab from URL parameter if present (?cat=...)
+  // Pre-activate category tab from URL parameter (?cat=...) or rewritten path (/category/{cat})
   const urlParams = new URLSearchParams(window.location.search);
-  const catParam = urlParams.get('cat');
+  const pathMatch = window.location.pathname.match(/\/category\/([a-z0-9-]+)\/?$/i);
+  const catParam = urlParams.get('cat') || (pathMatch ? pathMatch[1].toLowerCase() : null);
   if (catParam) {
     filterCategory(catParam);
     const deskSection = document.getElementById('news-desk');

@@ -83,7 +83,7 @@ $current_url = 'https://' . ($settings['site_domain'] ?? 'sndmedia.in') . '/arti
   <nav class="flex items-center gap-2 text-xs text-slate-400 mb-4 flex-wrap">
     <a href="index.php" class="hover:text-white">Home</a>
     <span>&rsaquo;</span>
-    <a href="index.php#<?= sanitize_output($article['category']) ?>" class="hover:text-amber-400 uppercase font-bold text-amber-400">
+    <a href="category/<?= sanitize_output($article['category']) ?>" class="hover:text-amber-400 uppercase font-bold text-amber-400">
       <?= sanitize_output($article['category']) ?>
     </a>
     <span>&rsaquo;</span>

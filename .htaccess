@@ -52,44 +52,52 @@ AddDefaultCharset UTF-8
     php_flag expose_php Off
 </IfModule>
 
-# 4. Error Document Handlers
-ErrorDocument 404 /Websites/SND-Media-House/404.php
-
-# 5. Block Direct Access to Sensitive Files & Folders
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env)|composer\.(json|lock))$">
-    Order deny,allow
-    Deny from all
+# 4. Block Direct Access to Sensitive Files & Folders
+<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|env)|composer\.(json|lock)|^web\.config)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
-# 6. URL Rewriting Engine (Clean Extensionless Routing)
+# 5. URL Rewriting Engine (Portable Clean Extensionless Routing)
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /Websites/SND-Media-House/
 
-    # 6.1. Redirect direct .php requests to clean extensionless URLs (exclude internal / api endpoints if needed)
-    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/Websites/SND-Media-House/([^\s?]+)\.php [NC]
-    RewriteRule ^ %1 [R=301,L,NE]
+    # 5.1. Block Direct Access to Sensitive Directories & Uploaded PHP Scripts
+    RewriteRule ^(config|database|includes)(/.*)?$ - [F,L,NC]
+    RewriteRule ^assets/uploads/.*\.php$ - [F,L,NC]
 
-    # 6.2. Sitemap Routing
+    # 5.2. Sitemap Routing
     RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
-    # 6.3. Clean Legal Policy Pages: /legal/privacy-policy -> legal.php?page=privacy-policy
+    # 5.3. Clean Legal Policy Pages: /legal/privacy-policy -> legal.php?page=privacy-policy
     RewriteRule ^legal/([a-z0-9-]+)/?$ legal.php?page=$1 [L,QSA]
 
-    # 6.4. Clean Article URLs: /article/slug-title -> article.php?slug=slug-title
+    # 5.4. Clean Article URLs: /article/slug-title -> article.php?slug=slug-title
     RewriteRule ^article/([a-z0-9-]+)/?$ article.php?slug=$1 [L,QSA]
 
-    # 6.5. Clean Category URLs: /category/national -> index.php?cat=national
+    # 5.5. Clean Category URLs: /category/national -> index.php?cat=national
     RewriteRule ^category/([a-z0-9-]+)/?$ index.php?cat=$1 [L,QSA]
 
-    # 6.6. Map Extensionless URLs to .php files if file exists
+    # 5.6. Map Extensionless Root URLs (e.g. /studio-rental -> studio-rental.php)
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{DOCUMENT_ROOT}/Websites/SND-Media-House/$1.php -f [OR]
+    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+    RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
 
-    # 6.7. Map Extensionless Subdirectory URLs (e.g. admin/login -> admin/login.php)
+    # 5.7. Map Extensionless Subdirectory URLs (e.g. /admin/login -> admin/login.php)
     RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME}.php -f
-    RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ $1/$2.php [L,QSA]
+    RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ $1/$2.php [L,QSA]
+
+    # 5.8. Branded 404 Fallback for non-existent routes (works at root or subdirectory)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|map|pdf|txt|xml)$ [NC]
+    RewriteRule ^ 404.php [L]
 </IfModule>

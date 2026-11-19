@@ -29,7 +29,7 @@ SND Media is a PHP 8 / MySQL production web platform operating out of **SND Publ
 
 - **Backend:** PHP 8.1+ (PDO MySQL, strict prepared statements)
 - **Database:** MySQL 8.0+ / MariaDB 10.4+ (`utf8mb4_unicode_ci`)
-- **Web Server:** Apache 2.4+ (`mod_rewrite`, `mod_headers`, `mod_deflate`)
+- **Web Server:** Apache 2.4+ (`mod_rewrite`, `mod_headers`, `mod_deflate` via `.htaccess`) or Windows IIS / PleskWin (`IIS URL Rewrite` via `web.config`)
 - **Frontend:** Pre-compiled Tailwind CSS (`assets/css/tailwind.min.css`), custom CSS (`assets/css/custom.css`), vanilla JavaScript (`assets/js/main.js`), FontAwesome 6, Google Fonts
 
 ---
@@ -50,6 +50,7 @@ SND-Media-House/
 ├── robots.txt                 # Crawler exclusions & sitemap pointer
 ├── sitemap.php                # Dynamic XML sitemap generator
 ├── studio-rental.php          # Commercial studio showcase & rate estimator
+├── web.config                 # Windows IIS / PleskWin URL Rewrite rules & security blocks
 ├── admin/
 │   ├── articles.php           # Story composer, 3-bullet highlights & publishing status
 │   ├── facilities.php         # Studio A/B & ad inventory rate card manager
@@ -116,8 +117,9 @@ SND-Media-House/
    - Port: `3306`
    - Database: `sndmedia_db`
    - User: `root` (empty password)
-4. **Adjust `.htaccess` for production root domain (`sndmedia.in`):**
-   `.htaccess` is currently configured for the local subdirectory `/Websites/SND-Media-House/`. When deploying to the root virtual host, update lines 56 and 67–70 in `.htaccess` to `/404.php` and `RewriteBase /` (see `docs/PRODUCTION_DEPLOYMENT_GUIDE.md`).
+4. **Clean URL Routing (Apache & Windows IIS):**
+   - **Apache / XAMPP / Linux:** `.htaccess` uses portable relative rewrite rules with no hardcoded `RewriteBase`, so clean URLs (`/studio-rental`, `/article/{slug}`, `/category/{cat}`, `/legal/{page}`) work seamlessly in both local subdirectories and root domains.
+   - **Windows IIS / PleskWin Cloud Hosting:** `web.config` provides matching IIS URL Rewrite rules (extensionless PHP, `/article/*`, `/category/*`, `/legal/*`, `/sitemap.xml`, and `404.php` fallback). Ensure the **IIS URL Rewrite** module is enabled on the server.
 5. **Upload permissions (Linux/production):**
    Ensure `assets/uploads/` subdirectories (`ads`, `articles`, `docs`, `facilities`) are writable by the web server (`chmod -R 775 assets/uploads`).
 
