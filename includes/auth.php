@@ -124,7 +124,12 @@ function require_role($allowed_roles) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>403 Access Denied | SND Admin</title>
-            <script src="https://cdn.tailwindcss.com"></script>
+            <!-- Favicon -->
+            <link rel="icon" type="image/svg+xml" href="../assets/images/snd-logo.svg">
+            <link rel="alternate icon" href="../favicon.ico">
+            <link rel="apple-touch-icon" href="../assets/images/snd-logo.svg">
+            <link rel="stylesheet" href="../assets/css/tailwind.min.css">
+            <link rel="stylesheet" href="../assets/css/custom.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         </head>
         <body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen p-4">

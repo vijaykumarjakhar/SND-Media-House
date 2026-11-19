@@ -19,6 +19,10 @@ function render_admin_header($page_title = 'Dashboard', $active_nav = 'dashboard
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= sanitize_output($page_title) ?> | SND Media Admin Console</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/snd-logo.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/snd-logo.svg">
     <!-- Pre-compiled Tailwind CSS -->
     <link rel="stylesheet" href="../assets/css/tailwind.min.css">
     <link rel="stylesheet" href="../assets/css/custom.css">

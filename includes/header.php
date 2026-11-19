@@ -51,6 +51,8 @@ $active_nav = $active_nav ?? '';
   <?php render_seo_tags(['title' => $page_title, 'description' => $seo_desc ?? null, 'type' => $seo_type ?? 'website', 'article' => $seo_article ?? null]); ?>
 
   <link rel="icon" type="image/svg+xml" href="assets/images/snd-logo.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/snd-logo.svg">
 
   <!-- High-Performance Pre-compiled Static Tailwind CSS (Zero Runtime Overhead) -->
   <link rel="stylesheet" href="assets/css/tailwind.min.css">

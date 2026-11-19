@@ -84,6 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Login | SND Media Admin Console</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/snd-logo.svg">
+    <link rel="alternate icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/snd-logo.svg">
     <!-- Pre-compiled Tailwind CSS -->
     <link rel="stylesheet" href="../assets/css/tailwind.min.css">
     <link rel="stylesheet" href="../assets/css/custom.css">
